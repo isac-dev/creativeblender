@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dinamic Div</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+  <style>
+    * 
+    {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+      font-family: 'Barlow', sans-serif;
+      text-decoration: none;
+    }
+    .outer-div 
+    {
+      display: flex;
+      background-color: #27498C;
+    }
+    .inner-div 
+    {
+      flex: 1;
+      padding: 10px;
+      height: 300px;
+      text-align: center;
+    }
+    iframe
+    {
+      outline: none;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      height: 90%;
+    }
+    @media (max-width: 500px)
+    {
+      .inner-div 
+      {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    
+    var jsonPath = '../static/json/animals.json';
+
+    
+    function loadJSON(callback) {
+      var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+      xobj.open('GET', jsonPath, true);
+      xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+        }
+      };
+      xobj.send(null);
+    }
+
+    
+    function createDivs(data) {
+      var container = document.getElementById('container');
+      var jsonData = JSON.parse(data);
+      var objects = jsonData.objects;
+
+      var numDivs = Math.ceil(objects.length / 3);
+
+      for (var i = 0; i < numDivs; i++) {
+        var outerDiv = document.createElement('div');
+        outerDiv.className = 'outer-div';
+
+        for (var j = i * 3; j < (i + 1) * 3 && j < objects.length; j++) {
+          var innerDiv = document.createElement('div');
+          innerDiv.className = 'inner-div';
+
+          var iframe = document.createElement('iframe');
+          iframe.src = objects[j];
+
+          innerDiv.appendChild(iframe);
+          outerDiv.appendChild(innerDiv);
+        }
+
+        container.appendChild(outerDiv);
+      }
+    }
+
+    loadJSON(createDivs);
+
+  </script>
+</body>
+</html>

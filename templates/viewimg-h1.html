@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu com Troca de Imagens</title>
+  <style>
+    #menu 
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img#imgBig
+    {
+      border-radius: 8px;
+    }
+    
+    .imgSmall 
+    {
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <img id="imgBig" src="../static/highlights/h-1/img/imagem1.jpg" width="380" height="230">
+    <div id="imagensPequenas">
+      <img class="imgSmall" src="../static/highlights/h-1/img/imagem2.jpg" width="80" height="50">
+      <img class="imgSmall" src="../static/highlights/h-1/img/imagem3.jpg" width="80" height="50">
+      <img class="imgSmall" src="../static/highlights/h-1/img/imagem4.jpg" width="80" height="50">
+      <img class="imgSmall" src="../static/highlights/h-1/img/imagem5.jpg" width="80" height="50">
+    </div>
+  </div>
+
+  <script>
+
+    const imgBig = document.getElementById('imgBig');
+    const imgSmallArray = Array.from(document.getElementsByClassName('imgSmall'));
+
+
+    imgSmallArray.forEach(imgSmall => {
+      imgSmall.addEventListener('click', trocarImagens);
+    });
+
+
+    function trocarImagens() {
+
+      const imgBigSrc = imgBig.src;
+
+
+      imgBig.src = this.src;
+
+
+      this.src = imgBigSrc;
+    }
+  </script>
+</body>
+</html>
+

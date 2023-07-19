@@ -1,0 +1,37 @@
+{
+    "high": {
+      "Vértices": 8.556,
+      "Arestas": 23.291,
+      "Faces": 14.740,
+      "Triângulos": 14.740,
+      "Original.blend": "Sim",
+      "Triangulado, .blend": "Não",
+      "Triangulado para jogo .glb, .etc": "Sim",
+      "Nota": "Quando um objeto é triangulado, o número de faces é igual ao número de triângulos. Quando não está triangulado, o número de triângulos é o dobro do número de faces. No entanto, ao exportar para uso em jogos, o objeto será triangulado. Todos os ativos do jogo são triangulados. Os arquivos originais não estão triangulados e destinam-se a fins de edição."
+    },
+  
+    "median": {
+      "Vértices": 1.841,
+      "Arestas": 5.233,
+      "Faces": 3.404,
+      "Triângulos": 3.404,
+      "Original.blend": "Sim",
+      "Triangulado, .blend": "Não",
+      "Triangulado para jogo .glb, .etc": "Sim",
+      "Nota": "Quando um objeto é triangulado, o número de faces é igual ao número de triângulos. Quando não está triangulado, o número de triângulos é o dobro do número de faces. No entanto, ao exportar para uso em jogos, o objeto será triangulado. Todos os ativos do jogo são triangulados. Os arquivos originais não estão triangulados e destinam-se a fins de edição."
+    },
+  
+    "low": {
+      "Vértices": 972,
+      "Arestas": 2.771,
+      "Faces": 1.811,
+      "Triângulos": 1.811,
+      "Original.blend": "Sim",
+      "Triangulado, .blend": "Não",
+      "Triangulado para jogo .glb, .etc": "Sim",
+      "Nota": "Quando um objeto é triangulado, o número de faces é igual ao número de triângulos. Quando não está triangulado, o número de triângulos é o dobro do número de faces. No entanto, ao exportar para uso em jogos, o objeto será triangulado. Todos os ativos do jogo são triangulados. Os arquivos originais não estão triangulados e destinam-se a fins de edição."
+    },
+
+  "link": "https://drive.google.com/file/d/1sOqa9nxdWg-CkN98WTBFJRStE7D3G8r6/view?usp=sharing"
+}
+  

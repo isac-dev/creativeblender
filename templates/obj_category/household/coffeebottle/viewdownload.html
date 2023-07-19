@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <title>View Download</title>
+</head>
+<style>
+    * 
+    {
+      overflow-y: hidden;
+    }
+
+    body 
+    {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .viewdownload 
+    {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    .viewdownload .view 
+    {
+      width: 70%;
+      height: 100%;
+    }
+
+    .viewdownload .download 
+    {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      background-color: #27498C;
+      color: #7292F2;
+    }
+
+    .forms
+    {
+      display: flex;
+      height: 50px;
+      margin-right: 50px;
+      justify-content: center; 
+      margin-top: 2%;
+    }
+
+    .forms .hml, 
+    .languageForm
+    {
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      background-color: #73030D;
+      color: #7292F2;
+    }
+
+    .forms .languageForm
+    {
+      margin-left: 10px;
+    }
+
+    .hml, 
+    .languageForm 
+    {
+      height: 30px;
+    }
+
+
+    .viewdownload .view iframe 
+    {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ad
+    {
+      background-color: bisque;
+      position: relative;
+      width: 90%;
+      height: 170px;
+      margin: auto;
+      z-index: 1;
+    }
+
+    div#json-container,
+    .download_button
+    {
+      width: 80%;
+      margin: auto;
+    }
+
+    .download_button button 
+    {
+      border: #7292F2;
+      text-decoration: none;
+    }
+
+    div#json-container p 
+    {
+      font-weight: bolder;
+    }
+
+    a 
+    {
+      display: block;
+      text-align: center; 
+      padding: 10px; 
+      text-decoration: none; 
+      border-radius: 6px;
+      margin-top: 10px; 
+      font-weight: bolder;
+      background-color: #73030D;
+      color: #7292F2;
+    }
+
+    a:hover 
+    {
+      background-color: #0D2CD9;
+    }
+
+    .download_button 
+    {
+      max-width: 300px; 
+      margin: 0 auto; 
+      padding: 20px;
+      border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="viewdownload">
+       
+        <div class="view">
+            <iframe src="./previewdownload.html" frameborder="0"></iframe>
+        </div>
+        <div class="download">
+            
+            <div class="forms">
+              <form>
+
+                <select class="hml" style="font-weight: bolder;">
+                    <option value="high" style="font-weight: bolder;">High</option>
+                    <option value="median" style="font-weight: bolder;">Median</option>
+                    <option value="low" style="font-weight: bolder;">Low</option>
+                  </select>
+              </form>
+
+              <form id="languageForm" style="font-weight: bolder;">
+                <select id="languageSelect" class="languageForm" style="font-weight: bolder;">
+                  <option value="en" style="font-weight: bolder;">Inglês</option>
+                  <option value="pt" style="font-weight: bolder;">Português</option>
+                </select>
+              </form>
+
+            </div>
+            
+            <div id="json-container"></div>
+
+            <div class="ad">
+
+            </div>
+
+            <div class="download_button">
+              <h1>Download</h1>
+              <a href="../../../../static/obj_category/household/coffeebottle/coffeebottle.zip" download>
+                  Download
+              </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      
+      let option = 'en';
+
+      function updateOption() {
+        option = document.getElementById('languageSelect').value;
+        console.log('Novo valor de option:', option);
+        carregarJSON().then((jsonData) => {
+          const defaultValue = select.value;
+          exibirValores(defaultValue, jsonData);
+        });
+      }
+
+      document.getElementById('languageSelect').addEventListener('change', updateOption);
+
+      async function carregarJSON() {
+        try {
+          const response = await fetch(`../../../../static/obj_category/animals/monkey/obj${option}.json`);
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error('Erro ao carregar o arquivo JSON:', error);
+          return null;
+        }
+      }
+
+      const form = document.querySelector('form');
+      const select = form.querySelector('select');
+      const jsonContainer = document.querySelector('#json-container');
+
+      function exibirValores(option, jsonData) {
+        jsonContainer.innerHTML = '';
+
+        if (jsonData[option.toLowerCase()]) {
+          const objetoSelecionado = jsonData[option.toLowerCase()];
+          Object.entries(objetoSelecionado).forEach(([key, value]) => {
+            const paragraph = document.createElement('p');
+            paragraph.innerText = key + ': ' + value;
+            jsonContainer.appendChild(paragraph);
+          });
+        } else {
+          const paragraph = document.createElement('p');
+          paragraph.innerText = 'Object not found.';
+          jsonContainer.appendChild(paragraph);
+        }
+      }
+
+      select.addEventListener('change', async () => {
+        const value = select.value;
+        const jsonData = await carregarJSON();
+        exibirValores(value, jsonData);
+      });
+
+      carregarJSON().then((jsonData) => {
+        const defaultValue = select.value;
+        exibirValores(defaultValue, jsonData);
+      });
+
+    </script>
+
+    <script>
+
+      function criarLinkAoLadoDoBotao() {
+        fetch('../../../../static/obj_category/household/coffeebottle/objen.json') 
+          .then(response => response.json())
+          .then(data => {
+            if (data.hasOwnProperty('link')) {
+              var linkValue = data.link;
+              var linkElement = document.createElement("a");
+
+              linkElement.setAttribute("href", linkValue);
+              linkElement.setAttribute("target", "_blank");
+              linkElement.innerHTML = "Google Drive Alternative Download";
+
+              var divDownloadButton = document.querySelector(".download_button");
+              divDownloadButton.appendChild(linkElement);
+            }
+          })
+          .catch(error => console.log(error));
+      }
+
+      criarLinkAoLadoDoBotao();
+
+    </script>
+
+</body>
+</html>

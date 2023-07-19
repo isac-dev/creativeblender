@@ -1,0 +1,23 @@
+{
+"assets3d": "Asset3D",
+"architecture": "Arquitetura",
+"household": "Doméstico",
+"sports": "Esporte",
+"external": "Externos",
+"electronics": "Eletrônicos",
+"vegetables_plants": "Vegetais e Plantas",
+"clothing": "Vestuário",
+"animals": "Animais",
+"vehicles": "Veículos",
+"people": "Pessoas",
+"gun": "Armas",
+"all": "Todos",
+"home": "Home",
+"about": "Sobre",
+"about_platform": "Sobre a plataforma",
+"welcome": "Bem-vindo à nossa plataforma de modelos 3D! Aqui você encontrará uma vasta coleção de modelos tridimensionais de objetos domésticos, armas, assets externos, plantas e vegetais, arquitetura e muito mais.",
+"platform_problem": "A plataforma foi criada com o objetivo de solucionar um problema: pessoas que desejam desenvolver jogos ou projetos envolvendo objetos 3D, principalmente desenvolvedores independentes ou pequenas empresas, enfrentam dificuldades na hora de criar um projeto de jogo. Eles precisam programar, modelar e texturizar, mas muitas vezes enfrentam restrições financeiras que tornam inviável a compra de assets que variam de 1 dólar a 50 dólares. Assim, eles se encontram diante da decisão de gastar dinheiro sem saber se terão retorno, ou de modelar e texturizar por conta própria. No meu caso, passei por essa situação, trabalhando árduamente e voltando ao ponto inicial várias vezes devido ao constante aprendizado de novas técnicas de otimização dos modelos. A terceira opção é simplesmente desistir do projeto.",
+"channel_website": "Diante desses desafios, decidi criar um canal e um site para ajudar a resolver alguns desses problemas. O canal é voltado para pessoas que modelam jogos ou elementos neles, e que necessitam de conhecimento e técnicas para aprimorar seu trabalho. Nossa plataforma oferece modelos 3D originais em formato low poly para serem aprimorados com o subdivision surface do Blender ou outros softwares 3D. Essa é a versão onde você pode aumentar ou diminuir a quantidade de polígonos conforme necessário. Também disponibilizamos versões prontas em low poly para aqueles que desejam apenas baixar e utilizar sem modificações, assim como a versão median poly, pronta para uso também. Todos os modelos são livres e gratuitos, seguindo a licença CC0. Isso significa que você pode usar, modificar e distribuir esses modelos livremente, inclusive para fins comerciais, sem a necessidade de permissão ou atribuição.",
+"goal": "Nosso objetivo é fornecer uma ampla variedade de modelos 3D de alta qualidade para facilitar o trabalho de empreendedores, empresas e desenvolvedores Indie. Esperamos que você encontre os modelos que precisa e desfrute da nossa plataforma.",
+"license": "Todos os modelos 3D disponíveis nesta plataforma são gratuitos e irrestritos sob a licença CC0, o que significa que você pode usá-los, modificá-los e distribuí-los livremente, inclusive para fins comerciais. A licença CC0 é uma das mais permissivas disponíveis, permitindo que você renuncie todos os seus direitos autorais sobre a obra e a torne de domínio público. Portanto, você pode usar os modelos 3D em seus projetos comerciais sem a necessidade de permissão ou atribuição, tornando o uso dessas obras muito mais fácil e acessível para empreendedores, empresas e desenvolvedores independentes."
+}

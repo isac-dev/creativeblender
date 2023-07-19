@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .view-highlights1,
+        .view-highlights3
+        {
+            width: 100%;
+            
+        }
+
+        
+        .view-highlights2,
+        .view-highlights4 
+        {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .view1,
+        .view3
+        {
+            width: 25%;
+            height: 240px;
+            float: left;
+        }
+
+        .view1 img,
+        .view2 img,
+        .view3 img,
+        .view4 img
+        {
+            width: 95%;
+            height: 95%;
+            margin: auto;
+            border-radius: 8px;
+            background-color: #27498C;
+            border: solid 1px;
+        }
+
+        .view2,
+        .view4
+        {
+            width: 33%;
+            height: 280px;
+            float: left;
+        }
+
+
+        @media (max-width: 900px)
+        {
+
+            .view-highlights1,
+            .view-highlights3
+            {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            
+            .view-highlights2,
+            .view-highlights4 
+            {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .view1,
+            .view3
+            {
+                width: 50%;
+                height: 240px;
+                margin: auto;
+                float: left;
+            }
+
+            .view2,
+            .view4
+            {
+                width: 100%;
+                height: 280px;
+                float: left;
+            }
+
+        }
+  </style>
+</head>
+<body>
+
+    <div class="view-highlights1">
+        <div class="view1 v1-1">
+          <img src="../static/img/img-highlights/1.png" alt="">
+        </div>
+        <div class="view1 v2-1">
+          <img src="../static/img/img-highlights/2.png" alt="">
+        </div>
+        <div class="view1 v3-1">
+          <img src="../static/img/img-highlights/3.png" alt="">
+        </div>
+        <div class="view1 v4-1">
+          <img src="../static/img/img-highlights/4.png" alt="">
+        </div>
+      </div>
+      
+      <div class="view-highlights2">
+        <div class="view2 v1-2">
+          <img src="../static/img/img-highlights/5.png" alt="">
+        </div>
+        <div class="view2 v2-2">
+          <img src="../static/img/img-highlights/6.png" alt="">
+        </div>
+        <div class="view2 v3-2">
+          <img src="../static/img/img-highlights/7.png" alt="">
+        </div>
+      </div>
+      
+      <div class="view-highlights3">
+        <div class="view3 v1-3">
+          <img src="../static/img/img-highlights/8.png" alt="">
+        </div>
+        <div class="view3 v2-3">
+          <img src="../static/img/img-highlights/9.png" alt="">
+        </div>
+        <div class="view3 v3-3">
+          <img src="../static/img/img-highlights/10.png" alt="">
+        </div>
+        <div class="view3 v4-3">
+          <img src="../static/img/img-highlights/11.png" alt="">
+        </div>
+      </div>
+      
+      <div class="view-highlights4">
+        <div class="view4 v1-4">
+          <img src="../static/img/img-highlights/12.png" alt="">
+        </div>
+        <div class="view4 v2-4">
+          <img src="../static/img/img-highlights/13.png" alt="">
+        </div>
+        <div class="view4 v3-4">
+          <img src="../static/img/img-highlights/14.png" alt="">
+        </div>
+      </div>
+      
+
+</body>
+</html>

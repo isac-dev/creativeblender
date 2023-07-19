@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Preview GLB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos anteriores permanecem iguais */
+
+        .popup {
+            /* Estilos para o pop-up */
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="body">
+
+        <div class="viewglb">
+            <!-- Códigos de iframe permanecem iguais -->
+        </div>
+
+        <div class="options">
+            <!-- Código do select e botão permanecem iguais -->
+
+            <!-- Novo código para o pop-up -->
+            <div class="popup" id="popup">
+                <button onclick="closePopup()">Fechar</button>
+                <div id="popup-iframe-container"></div>
+            </div>
+
+            <button onclick="openPopup()" style="text-decoration: none; border: none; background-color: transparent; cursor: pointer;">
+                View GLB & Download
+            </button>
+        </div>
+
+        <script>
+            // Função para abrir o pop-up
+            function openPopup() {
+                const select = document.querySelector('.hml');
+                const selectedOption = select.value;
+                const selectedIframe = document.getElementById('iframe-' + selectedOption);
+
+                if (selectedIframe) {
+                    const popup = document.getElementById('popup');
+                    const popupIframeContainer = document.getElementById('popup-iframe-container');
+
+                    popupIframeContainer.innerHTML = '';
+                    const popupIframe = document.createElement('iframe');
+                    popupIframe.src = selectedIframe.src;
+                    popupIframe.width = '100%';
+                    popupIframe.height = '100%';
+                    popupIframe.frameBorder = '0';
+                    popupIframeContainer.appendChild(popupIframe);
+
+                    popup.style.display = 'block';
+                }
+            }
+
+            // Função para fechar o pop-up
+            function closePopup() {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

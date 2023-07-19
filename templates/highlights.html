@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .highlights
+        {
+            display: flex;
+            justify-content: space-between;
+            width: auto;
+            height: 350px;
+        }
+
+
+        .highlights-1,
+        .highlights-2
+        {
+            flex-basis: 50%;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        iframe 
+        {
+            width: 100%;
+            height: 320px;
+        }
+
+        .h1,
+        .h2
+        {
+            width: auto;
+            height: 280px;
+        }
+
+        @media (max-width: 800px)
+        {
+            .highlights
+            {
+                display: block;
+                height: auto;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="highlights">
+
+        <div class="highlights-1">
+
+            <div class="iframe">
+                <iframe src="/templates/highlights-1.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="h1">
+                <iframe src="/templates/viewimg-h1.html" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="highlights-2">
+
+            <div class="iframe">
+                <iframe src="/templates/highlights-2.html" frameborder="0"></iframe>
+            </div>
+            
+            <div class="h2">
+                <iframe src="/templates/viewimg-h2.html" frameborder="0"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

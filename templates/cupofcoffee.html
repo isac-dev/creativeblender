@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>three.js webgl - GLTFloader + Texture Sequence</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #A60512;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "../static/three.js-master/build/three.module.js",
+            "three/": "../static/three.js-master/examples/jsm/"
+          }
+        }
+      </script>
+      
+      <script type="module">
+        import * as THREE from '../static/three.js-master/build/three.module.js';
+        import { OrbitControls } from '../static/three.js-master/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from '../static/three.js-master/examples/jsm/loaders/GLTFLoader.js';
+        import { RoomEnvironment } from '../static/three.js-master/examples/jsm/environments/RoomEnvironment.js';
+      
+        let camera, scene, renderer, controls;
+        let textures = [];
+        let materials = [];
+        let loadedObject;
+        let plane;
+
+        init();
+        animate();
+
+        function init() {
+            const container = document.createElement('div');
+            document.body.appendChild(container);
+
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 20);
+            camera.position.set(0, 0.5, 1.6);
+
+            scene = new THREE.Scene();
+
+
+            // model
+            new GLTFLoader().setPath('../static/three.js-master/examples/models/gltf/').load('cup_of_coffee.glb', function (gltf) {
+                gltf.scene.traverse(function (child) {
+                    if (child.isMesh) {
+                        child.scale.set(5, 5, 5);
+                        loadedObject = child;
+                        loadedObject.position.set(0, 0, 0);
+                    }
+                });
+
+                scene.add(gltf.scene);
+                loadTextures();
+            });
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1;
+            renderer.useLegacyLights = false;
+            container.appendChild(renderer.domElement);
+
+            const environment = new RoomEnvironment(renderer);
+            const pmremGenerator = new THREE.PMREMGenerator(renderer);
+
+            scene.background = new THREE.Color(0xA60512);
+            scene.environment = pmremGenerator.fromScene(environment).texture;
+
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.minDistance = 1;
+            controls.maxDistance = 10;
+            controls.target.set(0, 0.35, 0);
+            controls.update();
+
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function loadTextures() {
+            const textureLoader = new THREE.TextureLoader();
+            const numFrames = 300;
+            for (let i = 1; i <= numFrames; i++) {
+                const texture = textureLoader.load(
+                    `../static/obj/smoke_sequence/${String(i).padStart(4, "0")}.png`,
+                    () => {
+                        renderer.render(scene, camera);
+                    }
+                );
+                textures.push(texture);
+                const material = new THREE.MeshBasicMaterial({
+                    map: texture,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                });
+                materials.push(material);
+                updateTextureAndColor(i - 1);
+            }
+            createPlane();
+            startAnimation();
+        }
+
+        function createPlane() {
+          const planeGeometry = new THREE.PlaneGeometry(0.2, 0.2);
+          const planeMaterial = materials[0];
+          plane = new THREE.Mesh(planeGeometry, planeMaterial);
+          plane.position.copy(loadedObject.position); 
+          plane.position.add(new THREE.Vector3(0.2, 0.72, 0));
+          plane.scale.copy(loadedObject.scale);
+          scene.add(plane);
+      }
+
+
+        function startAnimation() {
+            const frameRate = 24;
+            const frameDuration = 1000 / frameRate;
+            let currentFrame = 0;
+            setInterval(() => {
+                currentFrame++;
+                if (currentFrame >= textures.length) {
+                    currentFrame = 0;
+                }
+                const texture = textures[currentFrame];
+                const material = materials[currentFrame];
+                plane.material = material;
+                renderer.render(scene, camera);
+            }, frameDuration);
+        }
+
+        function updateTextureAndColor(frameIndex) {
+          const texture = textures[frameIndex];
+          const material = materials[frameIndex];
+          material.map = texture;
+          material.color.setHex(0xffffff);
+          material.opacity = 0.5; 
+      }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(); // required if damping enabled
+            render();
+        }
+
+        function render() {
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+
+</html>
