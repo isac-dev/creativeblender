@@ -3,12 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js"></script>
+    <script src="../static/js/lang.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Creative Blender</title>
 </head>
 <body>
-    <div>
-        Pohhaa
+    
+    <header>
+
+        <div class="logo">
+
+            CreativeBlender
+
+        </div>
+
+        <div class="dropdown">
+
+            <div class="assets" onmouseover="showDropdown()" onmouseout="hideDropdown()"><span id="assets3d">3D Assets</span>
+                
+            </div>
+
+            <div class="dropdown-content" id="dropdownMenu" onmouseover="cancelFadeOut()" onmouseout="startFadeOut()">
+                <a href="/templates/category_architecture.html"><i class="fas fa-building"></i> <span id="architecture">Architecture</span></a>
+                <a href="/templates/category_household.html"><i class="fas fa-home"></i> <span id="household">Household</span></a>
+                <a href="/templates/category_sports.html"><i class="fas fa-futbol"></i> <span id="sports">Sports</span></a>
+                <a href="/templates/category_external.html"><i class="fas fa-tree"></i> <span id="external">External</span></a>
+                <a href="/templates/category_eletronics.html"><i class="fas fa-mobile-alt"></i> <span id="electronics">Electronics</span></a>
+                <a href="/templates/category_vegetables.html"><i class="fas fa-leaf"></i> <span id="vegetables_plants">Vegetables and Plants</span></a>
+                <a href="/templates/category_clothing.html"><i class="fas fa-tshirt"></i> <span id="clothing">Clothing</span></a>
+                <a href="/templates/category_animals.html"><i class="fas fa-dog"></i> <span id="animals">Animals</span></a>
+                <a href="/templates/category_vehicles.html"><i class="fas fa-car"></i> <span id="vehicles">Vehicles</span></a>
+                <a href="/templates/category_peoples.html"><i class="fas fa-user"></i> <span id="people">People</span></a>
+                <a href="/templates/category_gun.html"><i class="fas fa-gun"></i> <span id="gun">Gun</span></a>
+                <a href="/templates/category_all.html"><i class="fas fa-globe"></i> <span id="all">All</span></a>
+                <a href="index.html"><i class="fas fa-home"></i> <span id="home">Home</span></a>
+            </div>
+            
+
+            <div class="about"><span id="about">About</span>
+
+            </div>
+
+        </div>
+
+        <div class="midia">
+
+            <a href="https://www.youtube.com/@CreativeBlend313" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/3Dfreeblender" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100093541597972" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+
+        <form>
+
+            <select class="language-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+            </select>
+            
+        </form>
+
+    </header>
+
+    <div class="ad-left"></div>
+    <div class="ad-right"></div>
+
+    <div class="body">
+
+        <div class="search">
+
+            <div class="search-bar">
+                <button class="assets-search" id="assets-search" onmouseover="showDropdown()" onmouseout="hideDropdown()"><span id="assets3d">3D Assets</span></button>
+                <input type="text" placeholder="Search..." style="color: #7292F2; font-weight: bolder;">
+                <button class="fasearch"><i class="fas fa-search"></i></button>
+            </div>
+
+        </div>
+
+        <div class="view-coffee">
+            <iframe src="/templates/cupofcoffee.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="highlights">
+            <iframe src="/templates/highlights.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="view-highlights">
+            <iframe src="/templates/viewhighlights.html" frameborder="0"></iframe>
+        </div>
         
+        <div class="about_us">
+            <div class="about_us-child">
+                <h1><span id="about_platform">About the platform</span></h1>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="welcome">Welcome to our 3D models platform! Here you will find a vast 
+                    collection of three-dimensional models of household 
+                    objects, weapons, external assets, plants and vegetables, 
+                    architecture, and much more.</span>
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="platform_problem">The platform was created with the aim of solving a problem: 
+                    people who want to develop games or projects involving 3D 
+                    objects, especially independent developers or small companies, 
+                    face difficulties when it comes to creating a game project. They
+                    need to program, model, and texture, but often face financial 
+                    constraints that make it unfeasible to purchase assets ranging 
+                    from $1 to $50. Thus, they are faced with the decision to spend 
+                    money without knowing if they will have a return or to model 
+                    and texture on their own. In my case, I went through this 
+                    situation, working hard and going back to square one several 
+                    times due to the constant learning of new model optimization 
+                    techniques. The third option is simply to give up on the project.</span>
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="channel_website">In the face of these challenges, I decided to create a channel and a website 
+                    to help solve some of these problems. The channel is aimed at people who model 
+                    games or elements within them, and who need knowledge and techniques to enhance 
+                    their work. Our platform offers original 3D models in low-poly format to be 
+                    enhanced with Blender's subdivision surface or other 3D software. This is the 
+                    version where you can increase or decrease the polygon count as needed. We also 
+                    provide ready-made low-poly versions for those who just want to download and use 
+                    them without modifications, as well as the median-poly version, ready for use as 
+                    well. All models are free and unrestricted under the CC0 license. This means you 
+                    can use, modify, and distribute these models freely, including for commercial 
+                    purposes, without the need for permission or attribution.</span>
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="goal">Our goal is to provide a wide variety of high-quality 3D models to facilitate the 
+                    work of entrepreneurs, companies, and indie developers. We hope that you find the 
+                    models you need and enjoy our platform.</span>
+                </p>
+            </div>
+        </div>
+
     </div>
+
+    <footer>
+
+        <div class="footer">
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span id="license">All the 3D models available on this platform are free and unrestricted under the 
+                CC0 license, which means you can use them, modify them, and distribute them freely, 
+                including for commercial purposes. The CC0 license is one of the most permissive 
+                licenses available, allowing you to waive all your copyrights to the work and making 
+                it public domain. Therefore, you can use the 3D models in your commercial projects 
+                without the need for permission or attribution, making the use of these works much 
+                easier and accessible for entrepreneurs, companies, and indie developers.</span>
+            </p>
+        </div>
+
+        <div class="midia-footer">
+            <a href="https://www.youtube.com/@CreativeBlend313" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/3Dfreeblender" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100093541597972" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+    </footer>
+
 </body>
 </html>
