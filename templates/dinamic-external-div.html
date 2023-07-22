@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Criação Dinâmica de Divs</title>
+  <title>Dinamic Div</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
   <style>
     * 
@@ -32,28 +32,6 @@
       width: 100%;
       height: 90%;
     }
-    .button-container
-    {
-      display: flex;
-      justify-content: center;
-    }
-    button
-    {
-      width: 40%;
-      height: 10%;
-      border-radius: 8px;
-      font-weight:bolder;
-      font-size: 16px;
-      cursor: pointer;
-      color: #7292F2;
-      border: solid 2px #7292F2;
-      background-color: #A60512;
-    }
-
-    button:hover
-    {
-      background-color: #27498C;
-    }
     @media (max-width: 500px)
     {
       .inner-div 
@@ -68,7 +46,7 @@
 
   <script>
     
-    var jsonPath = '../static/json/architecture.json';
+    var jsonPath = '../static/json/external.json';
 
     
     function loadJSON(callback) {
@@ -89,7 +67,7 @@
       var jsonData = JSON.parse(data);
       var objects = jsonData.objects;
 
-      var numDivs = Math.ceil(objects.length / 3); 
+      var numDivs = Math.ceil(objects.length / 3);
 
       for (var i = 0; i < numDivs; i++) {
         var outerDiv = document.createElement('div');
@@ -100,13 +78,9 @@
           innerDiv.className = 'inner-div';
 
           var iframe = document.createElement('iframe');
-          iframe.src = "/templates/viewglb.html"; 
-
-          var button = document.createElement('button');
-          button.textContent = 'View GLB';
+          iframe.src = objects[j];
 
           innerDiv.appendChild(iframe);
-          innerDiv.appendChild(button); 
           outerDiv.appendChild(innerDiv);
         }
 
@@ -115,6 +89,7 @@
     }
 
     loadJSON(createDivs);
+
   </script>
 </body>
 </html>
