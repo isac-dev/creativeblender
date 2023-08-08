@@ -1,9 +1,9 @@
 {
     "objects": [
       "../templates/obj_category/external/woodencrate/previewglb.html",
+      "../templates/obj_category/external/woodencratecartoon/previewglb.html",
       "../templates/obj_category/external/woodencrate/previewglb.html",
-      "../templates/obj_category/external/woodencrate/previewglb.html",
-      "../templates/obj_category/external/woodencrate/previewglb.html"
+      "../templates/obj_category/external/woodencratecartoon/previewglb.html"
     ]
 }
   
