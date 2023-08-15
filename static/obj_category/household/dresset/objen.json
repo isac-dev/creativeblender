@@ -1,0 +1,39 @@
+{
+  "high": {
+  "Vertices": 496,
+  "Edges": 1.100,
+  "Faces": 672,
+  "Triangles": 672,
+  "Original.blend": "Yes",
+  "Triangulated, .blend": "No",
+  "Triangulated for game .glb, .etc": "Yes",
+  "Note": "When an object is triangulated, the number of faces is the same as the number of triangles. When it is not triangulated, the number of triangles is twice the number of faces. However, when exporting for use in games, the object will be triangulated. All assets for the game are triangulated. The original files are not triangulated and are intended for editing purposes."
+  },
+
+  "median": {
+    "Vertices": 496,
+    "Edges": 1.100,
+    "Faces": 672,
+    "Triangles": 672,
+    "Original.blend": "No",
+    "Triangulated, .blend": "No",
+    "Triangulated for game .glb, .etc": "Yes",
+    "Note": "When an object is triangulated, the number of faces is the same as the number of triangles. When it is not triangulated, the number of triangles is twice the number of faces. However, when exporting for use in games, the object will be triangulated. All assets for the game are triangulated. The original files are not triangulated and are intended for editing purposes."
+  },
+
+  "low": {
+    "Vertices": 496,
+    "Edges": 1.100,
+    "Faces": 672,
+    "Triangles": 672,
+    "Original.blend": "No",
+    "Triangulated, .blend": "No",
+    "Triangulated for game .glb, .etc": "Yes",
+    "Note": "When an object is triangulated, the number of faces is the same as the number of triangles. When it is not triangulated, the number of triangles is twice the number of faces. However, when exporting for use in games, the object will be triangulated. All assets for the game are triangulated. The original files are not triangulated and are intended for editing purposes."
+  },
+
+  "author": "Mara de Tanga", 
+  "license": "CC-0",
+
+  "link": "https://drive.google.com/file/d/1b0vQaVGpcH6x_1T_vFqdxBNjZ4_7P_Rf/view?usp=sharing"
+}

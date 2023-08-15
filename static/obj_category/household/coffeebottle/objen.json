@@ -32,5 +32,8 @@
     "Note": "When an object is triangulated, the number of faces is the same as the number of triangles. When it is not triangulated, the number of triangles is twice the number of faces. However, when exporting for use in games, the object will be triangulated. All assets for the game are triangulated. The original files are not triangulated and are intended for editing purposes."
   },
 
+  "author": "Mara de Tanga", 
+  "license": "CC-0",
+  
   "link": "https://drive.google.com/file/d/1sOqa9nxdWg-CkN98WTBFJRStE7D3G8r6/view?usp=sharing"
 }

@@ -1,0 +1,40 @@
+{
+    "high": {
+      "Vertices": 496,
+      "Edges": 1.100,
+      "Faces": 672,
+      "Triangles": 672,
+      "Original.blend": "Sim",
+      "Triangulado, .blend": "Não",
+      "Triangulado para jogo .glb, .etc": "Sim",
+      "Nota": "Quando um objeto é triangulado, o número de faces é igual ao número de triângulos. Quando não está triangulado, o número de triângulos é o dobro do número de faces. No entanto, ao exportar para uso em jogos, o objeto será triangulado. Todos os ativos do jogo são triangulados. Os arquivos originais não estão triangulados e destinam-se a fins de edição."
+    },
+  
+    "median": {
+      "Vertices": 1.488,
+      "Edges": 2.187,
+      "Faces": 996,
+      "Triangles": 996,
+      "Original.blend": "Não",
+      "Triangulado, .blend": "Não",
+      "Triangulado para jogo .glb, .etc": "Sim",
+      "Nota": "Quando um objeto é triangulado, o número de faces é igual ao número de triângulos. Quando não está triangulado, o número de triângulos é o dobro do número de faces. No entanto, ao exportar para uso em jogos, o objeto será triangulado. Todos os ativos do jogo são triangulados. Os arquivos originais não estão triangulados e destinam-se a fins de edição."
+    },
+  
+    "low": {
+      "Vertices": 674,
+      "Edges": 1.022,
+      "Faces": 462,
+      "Triangles": 462,
+      "Original.blend": "Não",
+      "Triangulado, .blend": "Não",
+      "Triangulado para jogo .glb, .etc": "Sim",
+      "Nota": "Quando um objeto é triangulado, o número de faces é igual ao número de triângulos. Quando não está triangulado, o número de triângulos é o dobro do número de faces. No entanto, ao exportar para uso em jogos, o objeto será triangulado. Todos os ativos do jogo são triangulados. Os arquivos originais não estão triangulados e destinam-se a fins de edição."
+    },
+
+  "author": "Mara de Tanga", 
+  "license": "CC-0",
+
+  "link": "https://drive.google.com/file/d/1b0vQaVGpcH6x_1T_vFqdxBNjZ4_7P_Rf/view?usp=sharing"
+}
+  
